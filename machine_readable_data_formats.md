@@ -9,6 +9,7 @@
 - [Preamble](#preamble)
 - [Introduction](#introduction)
 - [What does machine-readable mean?](#definition)
+- [Why do machine-readable data matter for biodiversity science?](#biodiversity)
 - [References](#references)
 - [Further readings](#further)
 - [Acknowledgements](#acknowledgements)
@@ -55,12 +56,10 @@ b) **Images are typically not machine-readable.** With the notable exception of 
 **[1]** Barcodes and watermarks are image-based data interfaces. The information they encode can be recovered from their representation, for instance in print, via a sensor such as the camera of a mobile phone. Popular barcodes are the universal product code (UPC), the quick response (QR) code, the Aztek code, and the Data Matrix [(Sharma, 2016)](#sharma). While barcodes work by embedding the data in the image pattern, watermarks hide the embedded data in an image  
 
 c) **There are potentially no limitations to the complexity of the data structures in machine-readable formats like CSV, XML, or JSON, nor these data formats have limitations to the number of data points they can support.** On the contrary, Excel XLSX files (but the same is true for other proprietary spreadsheet software) have limitations in both the number of columns and rows that they support. The limit was set by the developers of this proprietary software to avoid overloading memory and computing capabilities of the average computer user. There are no such limitations for machine-readable data formats like CSV, XML, or JSON, but, of course, parsing and editing larger and larger data files takes longer and longer until computational and memory capacity of the hardware used are reached.
-
-
  
 <br/>
 
-### Why do machine-readable data matter for biodiversity science?
+### <a id="biodiversity">Why do machine-readable data matter for biodiversity science?</a>  
 At the time of writing (June 2024) the Global Biodiversity Information Facility [GBIF](https://www.gbif.org) makes available via its partner institutions over 100.000 datasets amounting to several millions data records on plants, animals, and natural environments. These data range from taxonomic checklists to species observations to images and other media of digitised natural history collections. 
 
 While the raw data in themselves might not be machine-readable, for instance, this is the case for the digital images of collection specimens, all metadata for the records and all the tabular data are made available in a machine-readable format, such as tab delimited CSV files or XML files, following one of the data standards popular in biodiversity science. This makes all the records searchable and retrievable not just manually, but also automatically using the [GBIF API](https://techdocs.gbif.org/en/openapi/). 
