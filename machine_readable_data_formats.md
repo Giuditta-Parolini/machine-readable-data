@@ -1,6 +1,6 @@
 # Machine-Readable Data Formats in Biodiversity Informatics
 ## Recommendations and Best Practices
-##### *Project idea: Giuditta Parolini, Data Scientist, Museum für Naturkunde Berlin, Germany*
+##### ***Project idea: Giuditta Parolini, Data Scientist, Museum für Naturkunde Berlin, Germany***
 
 ------
 ------
@@ -10,9 +10,17 @@
 - [Introduction](#introduction)
 - [What does machine-readable mean?](#definition)
 - [Why do machine-readable data matter for biodiversity science?](#biodiversity)
+- [General formats for machine-readable data](#general)
+    - [Tabular data](#tabular)
+    - [Geographic data](#geographic)
+    - [Images](#images)
+    - [Other media](#other)
+- [Formats for machine-readable data specific to biodiversity science](#specific)
+- [Machine-readable data in the age of AI: Some final remarks](#ai)
 - [References](#references)
 - [Further readings](#further)
 - [Acknowledgements](#acknowledgements)
+
 ------
 ------
 <br/>
@@ -53,7 +61,7 @@ a) **Machine-readability is not defined in contrast or opposition to human-reada
 
 b) **Images are typically not machine-readable.** With the notable exception of barcodes and watermarks **[1]**, images are not machine-readable because the information they provide does not follow a specific data structure. This is true for holiday photos as well as for scientific images produced by microscopes, CT scans, infrared cameras, and other equipment commonly used in scientific research. Images produced with digital equipment, though, usually can (and should) have associated metadata in machine-readable format. In addition, although the semantic meaning of images cannot be directly accessed by machines, computer vision algorithms for image segmentation and object detection have been in use for quite some time to facilitate information extraction from images and their automatic labelling.
 
-**[1]** Barcodes and watermarks are image-based data interfaces. The information they encode can be recovered from their representation, for instance in print, via a sensor such as the camera of a mobile phone. Popular barcodes are the universal product code (UPC), the quick response (QR) code, the Aztek code, and the Data Matrix [(Sharma, 2016)](#sharma). While barcodes work by embedding the data in the image pattern, watermarks hide the embedded data in an image  
+**[1]** Barcodes and watermarks are image-based data interfaces. The information they encode can be recovered from their representation, for instance in print, via a sensor such as the camera of a mobile phone. Popular barcodes are the universal product code (UPC), the quick response (QR) code, the Aztek code, and the Data Matrix [(Sharma, 2016)](#sharma). While barcodes work by embedding the data in the image pattern, watermarks hide the embedded data in the image.
 
 c) **There are potentially no limitations to the complexity of the data structures in machine-readable formats like CSV, XML, or JSON, nor these data formats have limitations to the number of data points they can support.** On the contrary, Excel XLSX files (but the same is true for other proprietary spreadsheet software) have limitations in both the number of columns and rows that they support. The limit was set by the developers of this proprietary software to avoid overloading memory and computing capabilities of the average computer user. There are no such limitations for machine-readable data formats like CSV, XML, or JSON, but, of course, parsing and editing larger and larger data files takes longer and longer until computational and memory capacity of the hardware used are reached.
  
@@ -69,17 +77,19 @@ Given the amount of records under examination, it becomes quickly apparent that 
 
 <br/>
 
-### General formats for machine-readable data
-* #### Tabular data
-* #### Geographic data
-* #### Images
-* #### Other media
+### <a id="general">General formats for machine-readable data</a> 
+The value of using machine-readable data is  
+* #### <a id="tabular">Tabular data</a>  
+* #### <a id="geographic">Geographic data</a>   
+* #### <a id="images">Images</a>
+* #### <a id="other">Other media</a>
 <br/>
 
-### Formats for machine-readable data specific to biodiversity science
+### <a id="specific">Formats for machine-readable data specific to biodiversity science</a>
+
 <br/><br/>
 
-### Machine-readable data in the age of AI: Some final remarks
+### <a id="ai">Machine-readable data in the age of AI: Some final remarks</a> 
 <br/><br/>
 
 ### <a id="references">References</a>
