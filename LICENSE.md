@@ -1,1 +1,1 @@
-This Guide is licensed under a Creative Commons Attribution-ShareAlike 4.0 International [(CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+This Guide is licensed under a Creative Commons Attribution-ShareAlike 4.0 International license [(CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
