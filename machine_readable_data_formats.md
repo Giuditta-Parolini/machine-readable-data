@@ -80,7 +80,15 @@ Given the amount of records under examination, it becomes quickly apparent that 
 ### <a id="general">General formats for machine-readable data</a> 
 The value of using machine-readable data is  
 * #### <a id="tabular">Tabular data</a>  
-* #### <a id="geographic">Geographic data</a>   
+* #### <a id="geographic">Geographic data</a>
+
+
+
+
+
+
+
+
 * #### <a id="images">Images</a>
 * #### <a id="other">Other media</a>
 <br/>
