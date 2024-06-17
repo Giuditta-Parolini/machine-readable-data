@@ -72,14 +72,57 @@ At the time of writing (June 2024) the Global Biodiversity Information Facility 
 
 While the raw data in themselves might not be machine-readable, for instance, this is the case for the digital images of collection specimens, all metadata for the records and all the tabular data are made available in a machine-readable format, such as tab delimited CSV files or XML files, following one of the data standards popular in biodiversity science. This makes all the records searchable and retrievable not just manually, but also automatically using the [GBIF API](https://techdocs.gbif.org/en/openapi/). 
 
-Given the amount of records under examination, it becomes quickly apparent that having available information in a machine-readable format offers the opportunity to access data at scale, combine them for analysis that goes beyond the original aims of their creators, and redistribute them to a larger public. Yet, this is not always the case, especially with the smaller datasets associated to scientific articles. Due to the lack of a general policy for biodiversity science publications and the fact that biodiversity research appears in journals belonging to different disciplines, it is not uncommon to still find published biodiversity data only available in tables saved in DOCX files or compiled in spreadsheets that are not machine-readable. An even greater concern is for the unpublished data produced during research projects. The increased availability and usage of data management tools and platforms facilitates the implementation of best practices, but it is not ***per se*** a guarantee that the data created are machine-readable. For this reason, this guide provides an overview of suitable machine-readable data formats for biodiversity research, illustrates their context of application, and gives advice against possible pitfalls in their implementation.
+Given the amount of records under examination, it becomes quickly apparent that having available information in a machine-readable format offers the opportunity to access data at scale, combine them for analysis that goes beyond the original aims of their creators, and redistribute them to a larger public. Yet, this is not always the case, especially with the smaller datasets associated to scientific articles. Due to the lack of a general policy for biodiversity science publications and the fact that biodiversity research appears in journals belonging to different disciplines, it is not uncommon to still find published biodiversity data only available in tables saved in DOCX files or compiled in spreadsheets that are not machine-readable. An even greater concern is for the unpublished data produced during research projects. The increased availability and usage of data management tools and platforms facilitate the implementation of best practices, but they are not ***per se*** a guarantee that the data created are machine-readable. For this reason, this guide provides an overview of suitable machine-readable data formats for biodiversity research, illustrates their context of application, and gives advice against possible pitfalls in their implementation.
 
 
 <br/>
 
 ### <a id="general">General formats for machine-readable data</a> 
-The value of using machine-readable data is  
-* #### <a id="tabular">Tabular data</a>  
+***General formats*** is here used to refer to all machine-readable data formats that do not have any disciplinary boundary, but are widely adopted in science, business, and administration. There are quite a few of them. This section will not survey them all, but it will provide an overview of the most popular formats according to possible use cases.
+
+Image data and other media data are included in this section, even though these data are unstructured and therefore, strictly-speaking, not machine-readable. The reason to include them in this guide, however, is twofold. The first reason is that these data should at least have associated metadata (time, place, creator, rights, etc.) that are machine-readable and that provide relevant information about data creation and use (for instance, the license under which these data are available). The second reason is that unstructured data are becoming a big chunk of the data currently produced in biodiversity science. For instance, images, ranging from photos collected by citizen science projects to high-resolution specialised microscopy images, are becoming more and more relevant in biodiversity. Extracting the information they contain is an increasingly important pursuit that deserves some attention, as the methods applied are automatic methods that can generate machine-readable data for further analysis. 
+
+* #### <a id="tabular">Tabular data</a>
+Several types of scientific data, such as measurements and observations, are tabular data, that is to say, they are organised in rows and columns containing numbers, text strings for categorical/non-categorical data, urls, etc. These tabular data can be created using a spreadsheet software or extracted from a database via a query language. Regardless of how they are generated, tabular data should always be made available in a machine-readable format that makes their analysis and re-use immediate. Several opportunities are available.
+    
+* ###### <a id="csv">CSV, TSV</a>
+    CSV (Comma Separated Values) files (extension .csv) display tabular data using the comma (“,”) or the semicolon (“;”) as a delimiter. The latter delimiter is popular in European countries, where the comma is generally used as a decimal separator.
+    
+    For standard tabular data containing figures and text strings and with a number of rows up to about one million **[2]**, the CSV data format should be the first choice because it is an open format and its portability is much higher compared to spreadsheet formats like .xlsx, .ods, .numbers. Data in CSV format can be easily inspected and analysed using popular programming languages for data science, like Python and R.
+    TSV (Tab Separated Values) files differ from CSV files only for the choice of the delimiter that in this case is the tab. One of the two formats made available by GBIF for data download is the TSV file format.
+
+    CSV/TSV files have a very simple structure that can be easily inspected by eye. The first row contains the column headers and all the other rows in the file are the data points included in the dataset.
+    
+
+    **[2]** One million rows is here suggested because many spreadsheet software tools, e.g. MS Excel, have limitations in opening csv files above this range, but CSV files with several million rows exist and can be managed with different software tools (e.g., a text editor). The CSV data format, however, is not best suited for very big data for which formats like parquet described below are best suited 
+
+    Recommendations:
+
+
+   Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues.
+tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
+\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+
+* ###### <a id="txt">TXT</a>
+csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues.
+tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
+\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+
+* ###### <a id="xml">XML</a>
+csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues.
+tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
+\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+
+* ###### <a id="json">JSON</a>
+csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues.
+tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
+\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+
+* ###### <a id="parquet">PARQUET</a>
+csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues. 
+tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
+\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+
 * #### <a id="geographic">Geographic data</a>
 
 
