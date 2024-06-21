@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc:data xmlns:doc="https://example.com">
+  <doc:row>
+    <doc:heading>Dataset Title</doc:heading>
+    <doc:body>Mounted Specimens of the Historical Bird Collection at the Museum für Naturkunde Berlin</doc:body>
+  </doc:row>
+   <doc:row>
+    <doc:heading>Creator</doc:heading>
+    <doc:body>MfN Digitization</doc:body>
+  </doc:row>
+   <doc:row>
+    <doc:heading>License</doc:heading>
+    <doc:body>CC0 1.0 Creative Commons Public Domain Dedication</doc:body>
+  </doc:row>
+  <doc:row>
+    <doc:heading>Dataset Description</doc:heading>
+    <doc:body>The dataset contains metadata for over 13000 images of mounted bird specimens belonging to the bird collection of the Museum für Naturkunde Berlin (MfN). The mounted specimens were mostly collected in the 19th century and have now been systematically photographed. For large part of the mounted specimens the full taxonomy is available. When this is not the case, the specimens are identified with their German common names. In the dataset there are birds from the well-known families of pigeons (Columbidae), parrots (Psittacidae) and pheasants (Phasianidae) as well as duck birds (Anatidae) and exotic hummingbirds (Trochilidae). Some rare specimens such as the quetzal (Pharomachrus mocinno) are also available in this dataset.</doc:body>
+  </doc:row>
+  <doc:row>
+    <doc:heading>Keywords</doc:heading>
+    <doc:body>Birds, mounted specimens, Museum für Naturkunde Berlin</doc:body>
+  </doc:row>
+  <doc:row>
+    <doc:heading>Table 1</doc:heading>
+    <doc:body>Shortened version of dataset, “Mounted Specimens of the Historical Bird Collection at the Museum für Naturkunde Berlin”, DOI: 10.7479/wwqn-gd04.</doc:body>
+  </doc:row>
+</doc:data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
