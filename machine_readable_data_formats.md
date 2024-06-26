@@ -101,29 +101,32 @@ Several types of scientific data, such as measurements and observations, are tab
     - Saving in CSV format a badly formed spreadsheet (e.g., column headings split across multiple lines, multiple tables on the same electronic sheet, etc.) will not make the data machine-readable. Tabular data should be arranged with one table per sheet, column headings (if any) in single cells on the first row of the spreadsheet, no white spaces in between the data rows, etc. to create a valid machine-readable CSV file from the original spreadsheet.
     - If CSV files contain textual information, it is always recommended to properly encode this information ([encoding in UTF-8 is usually recommended](https://www.w3.org/International/questions/qa-choosing-encodings)) to avoid issues with non-standard characters when redistributing the data files.<br>
         **[2]** One million rows is here suggested because many spreadsheet software tools, e.g. MS Excel, have limitations in opening CSV files larger than this. However, CSV files with several million rows exist and can be managed using different software tools (e.g., a text editor). The CSV data format, however, is not best suited for very big datasets for which formats like parquet, described below, are a better choice.
+<br>
 
 
 * ###### <a id="txt">TXT</a>
     TXT files are machine-readable, but only support plain text format. UTF-8 is the recommended character encoding method to avoid issues, similarly to what already suggested for CVS/TSV files. TXT files should be the preferred machine-readable format for unstructured text that needs to be further analysed/mined. For annotated text, a machine-readable format like XML could be used. Tabular data can also be manipulated as strings of characters, even when the string characters are all numbers, therefore TXT files can be used to store tabular data. However,the CSV/TSV file format should still be the preferred choice in this case. 
-
+    <br>
 
 * ###### <a id="xml">XML</a>
     The [eXtensible Markup Language (XML)](https://www.w3.org/TR/xml/) is a file format used for storing and transferring data. It is called eXtensible Markup Language, because the content in a XML file is a combination of tags, which logically structure the content, and proper data. XML data files are both machine-readable and human-readable.
     The XML data format was developed in the context of the [World Wide Web Consortium (W3C)](https://www.w3.org) and it is a W3C recommendation, i.e., a standard for web communication. All XML processors accept the character encodings UTF-8 and UTF-16. UTF-8 is also in this case the recommended encoding to avoid issues at reading time.
     If the XML document has a **prolog** (optional feature) [e.g., <?xml version="1.0" encoding="UTF-8"?>], it must be placed at the beginning, before the file content. Every XML file has a **root** entity, which is the entity a parser tool uses to begin reading the content of the XML document. All the content in the XML file is packaged in storage units, the elements, enclosed by appropriate start- and end- tags and properly nested. Tags in a XML file are case sensitive and cannot contain empty spaces. The only reserved tag, not available to the xml document creator, is xml itself. XML documents must be [well-formed](https://www.w3.org/TR/xml/#dt-wellformed) according to the WC3 specification, otherwise a fatal error is raised by the parser. In addition, a distinctive feature of the XML file format is that it can be also validated using either a **XML Schema Definition (XSD)** or a **Document Type Definition (DTD)** and an appropriate parser and it can also have comments, unlike CSV files. XML elements can have attributes. For instance, the literary genre can be an attribute for a book element in a XML file that lists the contents of a library. Attributes are enclosed in element tags and need to be put within quotation marks.
-    
+    <br>
     
     
      
 * ###### <a id="json">JSON</a>
-csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues.
-tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
-\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+    The JavaScript Object Notation [(JSON)](https://ecma-international.org/publications-and-standards/standards/ecma-404/) format is a data interchange format that is both machine-readable and human-readable. As suggested by the name, the JSON format is built upon the JavaScript syntax and standard. However, JSON is language independent and JSON files can be created and processed using any programming language of choice because the structures used by JSON are common to all the main object oriented languages.
+    A JSON data file consists of **objects** included within curly braces, **data** assigned as key-value pairs included within quotation marks if strings, left unquoted if numbers, and **arrays** included in square brackets. The various data elements in a JSON file are separated by **commas**. Also for JSON files the UTF-8 encoding is the recommended character encoding.
+    JSON is probably the most popular data exchange format for web APIs, as it is a lightweight alternative to XML for compact data serialization. JSON documents are also increasingly popular for use in NoSQL databases like MongoDB because they are flexible in storing multiple data types and can easily accommodate changes in data model as information is saved as documents rather than as tables. The only condition is that the JSON documents satisfy all formal validity requirements for the JSON format (e.g., no curly or square braces left open, proper use of the comma to separate elements, etc.)
+    <br>
+
 
 * ###### <a id="parquet">PARQUET</a>
-csv (i.e., comma separated values) files can use as a separator either the comma (“,”), as originally intended, or the semicolon (“;”). Please, if you decide to use the semicolon instead of the comma, mention this choice in the readme file. Data fields that contain the separator used for the csv file should be enclosed within double quotation marks (e.g. “100,222” for a comma separated csv file) to avoid issues. 
-tsv (i.e., tab separated values) files are similar to csv files, but with the tab used as a separator. In a tsv file fields cannot contain therefore tabs or new line characters and conventions have to be applied (e.g. \n for newline,
-\t for tab) to avoid issues. tsv files are usually less supported than csv files for data import.
+    The PARQUET file format (file extension .parquet) is machine-readable, free, and open-source. Like JSON it is a language agnostic format that can be manipulated using multiple programming languages. PARQUET files store data column-based rather than row-based, as in CSV. This means a reduction in memory space occupied by the data and faster query execution due to data skipping and predicate push down (using metadata with summary statistics to ignore irrelevant data objects at query time). In addition, the PARQUET file format can be efficiently compressed and decompressed and it is suitable for storing complex and nested data structures. Due to these features, PARQUET files are popular for accessing and querying big datasets (in the GigaByte range) of many types: not just tabular data, but also images, videos, and documents can be stored in PARQUET format. <br>
+<br>
+ 
 
 * #### <a id="geographic">Geographic data</a>
 
