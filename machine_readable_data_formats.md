@@ -12,7 +12,19 @@
 - [Why do machine-readable data matter for biodiversity science?](#biodiversity)
 - [General formats for machine-readable data](#general)
     - [Tabular data](#tabular)
+        - [CSV, TSV](#csv)
+        - [TXT](#txt)
+        - [XML](#xml)
+        - [JSON](#json)
+        - [Parquet](#parquet)
     - [Geographic data](#geographic)
+        - [GeoJSON](#geojson)
+        - [GML](#gml)
+        - [Open Street Map XML](#open_street_map)
+        - [KML/KMZ](#kml)
+        - [GPX](#gpx)
+        - [DLG](#dlg)
+        - [GeoTIFF](#geotiff)
     - [Images](#images)
     - [Other media](#other)
 - [Formats for machine-readable data specific to biodiversity science](#specific)
@@ -88,7 +100,7 @@ Several types of scientific data, such as measurements and observations, are tab
 * ###### <a id="csv">CSV, TSV</a>
     CSV (Comma Separated Values) files (extension .csv) display tabular data using the comma (“,”) or the semicolon (“;”) as a delimiter. The semicolon as a delimiter is popular in European countries, where the comma is generally used as a decimal separator.
     
-    For standard tabular data containing figures and text strings and with a number of rows up to about one million **[2]**, the CSV data format should be preferred because it is an open format and its portability is much higher compared to spreadsheet formats like .xlsx or .ods. Data in CSV format can be easily inspected and analysed using popular programming languages for data science, like Python and R.
+    For standard tabular data containing figures and text strings and with a number of rows up to about one million [**[2]**](#2), the CSV data format should be preferred because it is an open format and its portability is much higher compared to spreadsheet formats like .xlsx or .ods. Data in CSV format can be easily inspected and analysed using popular programming languages for data science, like Python and R.
     TSV (Tab Separated Values) files differ from CSV files only for the choice of the delimiter that in this case is the tab. One of the two formats made available by GBIF for data download is precisely the TSV file format.
 
     CSV/TSV files have a very simple structure that can be easily inspected by eye. The first row contains the column headers and all the other rows in the file are the data points included in the dataset. The presence of the column headers is not a validity requirement for a CSV/TSV file. Only the data rows may be present. It is, however, required that the delimiter used in the file - be it the comma, the semicolon, or the tab - is never used in the value fields, unless properly escaped or marked as a string. If this requirement is not satisfied, the file cannot be read properly and a tokenization error (i.e., splitting the data into columns) will be raised.
@@ -100,7 +112,8 @@ Several types of scientific data, such as measurements and observations, are tab
     - Data creators using the CSV data format should always checked whether their .csv files are valid. Forgotten and not properly escaped commas, semicolons, and tabs in data cells are recurrent causes of tokenization errors. 
     - Saving in CSV format a badly formed spreadsheet (e.g., column headings split across multiple lines, multiple tables on the same electronic sheet, etc.) will not make the data machine-readable. Tabular data should be arranged with one table per sheet, column headings (if any) in single cells on the first row of the spreadsheet, no white spaces in between the data rows, etc. to create a valid machine-readable CSV file from the original spreadsheet.
     - If CSV files contain textual information, it is always recommended to properly encode this information ([encoding in UTF-8 is usually recommended](https://www.w3.org/International/questions/qa-choosing-encodings)) to avoid issues with non-standard characters when redistributing the data files.<br>
-        **[2]** One million rows is here suggested because many spreadsheet software tools, e.g. MS Excel, have limitations in opening CSV files larger than this. However, CSV files with several million rows exist and can be managed using different software tools (e.g., a text editor). The CSV data format, however, is not best suited for very big datasets for which formats like parquet, described below, are a better choice.
+    
+    <a id="2">**[2]**</a>  One million rows is here suggested because many spreadsheet software tools, e.g. MS Excel, have limitations in opening CSV files larger than this. However, CSV files with several million rows exist and can be managed using different software tools (e.g., a text editor). The CSV data format, however, is not best suited for very big datasets for which formats like parquet, described below, are a better choice.
 <br>
 
 
@@ -129,11 +142,35 @@ Several types of scientific data, such as measurements and observations, are tab
  
 
 * #### <a id="geographic">Geographic data</a>
+Geospatial information is popular in biodiversity science. It is employed to assess areas with high biodiversity and track changes in species distribution over time, just to mention a few of the possible uses. This type of information is crucial for informing species conservation and management strategies, and biodiversity data portals, like GBIF [**[3]**](#3), routinely make available tools to overlay the datasets they are indexing on geographic maps. 
+Geographic data deserve, therefore, a section of their own in a guide on machine-readable data formats for biodiversity science. The good news is that **proper geospatial information data formats, such as GeoJSON or GeoTIFF, are machine-readable**. The not so good news is that there is still geographic and location information distributed using image formats without proper georeferencing and this makes (re)using the geospatial information in the images problematic.
+There are dozens of geospatial information data formats, both proprietary and non-proprietary, available and it will not be possible to examine them individually in this guide. In the following section only a few of the formats most relevant and popular for biodiversity science will be considered. For a general overview of the geospatial data formats based on an [open standard](https://www.ogc.org/standards/), please consult the website of the Open Geospatial Consortium.
+Geospatial data can be split in two main categories: vector and raster data. **Geospatial vector data** consist in discrete vertices (or point) that create spatial objects. The vertices are defined on a two-dimensional coordinate system and, depending on how they are connected, they can have one of the following geometries: points (individual vectors), lines (at least two connected vectors per line), polygons (at least three connected and closed vectors per polygon). Attributes can be attached to each geometric feature in geospatial vector data (e.g., a biodiversity index can be attached to the polygons defining a geographic area in geospatial vector data) and given the nature of vector data they can be quite efficient for data storage and management. **Geospatial raster data** consist of a matrix of pixels organized into a grid. Each pixel is associated to a geographic location and can have information (continuous or categorical) attached to it (e.g., elevation or land use).
+
+
+* ###### <a id="geojson">GeoJSON</a>
+    CSV (Comma Separated Values) files (extension .csv) display tabular data using the comma (“,”) or the semicolon (“;”) as a delimiter. The semicolon as a delimiter is popular in European countries, where the comma is generally used as a decimal separator.
+    
+    For standard tabular data containing figures and text strings and with a number of rows up to about one million [**[2]**](#2), the CSV data format should be preferred because it is an open format and its portability is much higher compared to spreadsheet formats like .xlsx or .ods. Data in CSV format can be easily inspected and analysed using popular programming languages for data science, like Python and R.
+    TSV (Tab Separated Values) files differ from CSV files only for the choice of the delimiter that in this case is the tab. One of the two formats made available by GBIF for data download is precisely the TSV file format.
+* ###### <a id="gml">GML</a>
+
+
+* ###### <a id="open_street_map">Open Street Map XML</a>
+
+
+* ###### <a id="kml">KML/KMZ</a>
+
+
+
+
+* ###### <a id="geotiff">GeoTIFF</a>
 
 
 
 
 
+<a id="3">**[3]**</a> [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) is a web map tile service based on an [open standard](https://www.ogc.org/standard/wmts/) of the [Open Geospatial Consortium (OGC)](https://www.ogc.org/), an organisation devoted to improve access to geospatial and location information.
 
 
 
