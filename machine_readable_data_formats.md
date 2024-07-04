@@ -18,13 +18,16 @@
         - [JSON](#json)
         - [Parquet](#parquet)
     - [Geographic data](#geographic)
+        - [Shapefile](#shape)
         - [GeoJSON](#geojson)
         - [GML](#gml)
-        - [Open Street Map XML](#open_street_map)
-        - [KML/KMZ](#kml)
-        - [GPX](#gpx)
-        - [DLG](#dlg)
         - [GeoTIFF](#geotiff)
+        - [GeoPackage](#gpkg)
+    - [Sequencing data](#sequencing)
+        - [FastA](#fastA)
+        - [FastQ](#fastQ)
+        - [SAM/BAM/CRAM](#sam)
+        - [VCF]
     - [Images](#images)
     - [Other media](#other)
 - [Formats for machine-readable data specific to biodiversity science](#specific)
@@ -121,6 +124,9 @@ Several types of scientific data, such as measurements and observations, are tab
     TXT files are machine-readable, but only support plain text format. UTF-8 is the recommended character encoding method to avoid issues, similarly to what already suggested for CVS/TSV files. TXT files should be the preferred machine-readable format for unstructured text that needs to be further analysed/mined. For annotated text, a machine-readable format like XML could be used. Tabular data can also be manipulated as strings of characters, even when the string characters are all numbers, therefore TXT files can be used to store tabular data. However,the CSV/TSV file format should still be the preferred choice in this case. 
     <br>
 
+
+RDF 
+
 * ###### <a id="xml">XML</a>
     The [eXtensible Markup Language (XML)](https://www.w3.org/TR/xml/) is a file format used for storing and transferring data. It is called eXtensible Markup Language, because the content in a XML file is a combination of tags, which logically structure the content, and proper data. XML data files are both machine-readable and human-readable.
     The XML data format was developed in the context of the [World Wide Web Consortium (W3C)](https://www.w3.org) and it is a W3C recommendation, i.e., a standard for web communication. All XML processors accept the character encodings UTF-8 and UTF-16. UTF-8 is also in this case the recommended encoding to avoid issues at reading time.
@@ -144,29 +150,34 @@ Several types of scientific data, such as measurements and observations, are tab
 * #### <a id="geographic">Geographic data</a>
 Geospatial information is popular in biodiversity science. It is employed to assess areas with high biodiversity and track changes in species distribution over time, just to mention a few of the possible uses. This type of information is crucial for informing species conservation and management strategies, and biodiversity data portals, like GBIF [**[3]**](#3), routinely make available tools to overlay the datasets they are indexing on geographic maps. 
 Geographic data deserve, therefore, a section of their own in a guide on machine-readable data formats for biodiversity science. The good news is that **proper geospatial information data formats, such as GeoJSON or GeoTIFF, are machine-readable**. The not so good news is that there is still geographic and location information distributed using image formats without proper georeferencing and this makes (re)using the geospatial information in the images problematic.
-There are dozens of geospatial information data formats, both proprietary and non-proprietary, available and it will not be possible to examine them individually in this guide. In the following section only a few of the formats most relevant and popular for biodiversity science will be considered. For a general overview of the geospatial data formats based on an [open standard](https://www.ogc.org/standards/), please consult the website of the Open Geospatial Consortium.
-Geospatial data can be split in two main categories: vector and raster data. **Geospatial vector data** consist in discrete vertices (or point) that create spatial objects. The vertices are defined on a two-dimensional coordinate system and, depending on how they are connected, they can have one of the following geometries: points (individual vectors), lines (at least two connected vectors per line), polygons (at least three connected and closed vectors per polygon). Attributes can be attached to each geometric feature in geospatial vector data (e.g., a biodiversity index can be attached to the polygons defining a geographic area in geospatial vector data) and given the nature of vector data they can be quite efficient for data storage and management. **Geospatial raster data** consist of a matrix of pixels organized into a grid. Each pixel is associated to a geographic location and can have information (continuous or categorical) attached to it (e.g., elevation or land use).
+There are dozens of geospatial information data formats, both proprietary and non-proprietary, available and it will not be possible to examine them individually in this guide. In the following section only a few of the formats most relevant and popular for biodiversity science will be considered. For a general [overview of geospatial data formats based on open standards](https://www.ogc.org/standards/), please consult the website of the Open Geospatial Consortium.
+Geospatial data can be split in two main categories: vector and raster data. **Geospatial vector data** consist in discrete vertices (or points) that create spatial objects. The vertices are defined on a two-dimensional coordinate system and, depending on how they are connected, they can have one of the following geometries: points (individual vectors), lines (at least two connected vectors per line), polygons (at least three connected and closed vectors per polygon). Attributes can be assigned to each geometric feature in geospatial vector data (e.g., a biodiversity index can be attached to the polygons defining a geographic area). Geospatial vector data they can be quite efficient for data storage and management. **Geospatial raster data** consist, instead, of a matrix of pixels organized into a grid, similarly to the way digital images are represented. However, unlike standard images, in geospatial raster data each pixel is associated to a geographic location and can have information (continuous or categorical) attached to it (e.g., land elevation).
+In many cases, machine-readable geospatial data formats are built on machine-readable formats discussed above, like XML and JSON, that are customised to accommodate for geographic information for specific use cases. Two notable examples are [Open Street Map XML](https://wiki.openstreetmap.org/wiki/OSM_XML) that is the export format for the information contained in the [Open Street Map](https://www.openstreetmap.org/#map=6/51.330/10.453) geographic database and [Google KML](https://developers.google.com/kml/documentation/kml_tut), an XML-based file format introduced specifically to display geographic information on [Google Earth](https://earth.google.com/web/@0,-9.959,0a,22251752.77375655d,35y,0h,0t,0r).
+
+
+* ###### <a id="shape">Shapefile</a>
+    The Shapefile is a spatial vector data format introduced by [ESRI](https://www.esri.com/en-us/home). Although the Shapefile was developed as a proprietary format, ESRI has released [technical documentation](https://www.esri.com/content/dam/esrisites/sitecore-archive/Files/Pdfs/library/whitepapers/pdfs/shapefile.pdf) that allows anyone to develop software tools, like the open-source software [QGIS](https://www.qgis.org/en/site/), for using Shapefiles.
+    Shapefiles do not carry information in a single file, but in a set of different file types stored in the same directory and providing indications on geometric shapes and data attributes. The three mandatory components of a Shapefile are a **.shp** file that gives the shape geometry, a **.shx** file that gives the shape index position, and a **.dbf** file that contains the attribute data.
+    Due to the long usage history and the relative ease to manipulate them, Shapefiles remain one of the most popular formats for transferring geospatial information. But they are not always the best choice. For instance, they have limitations in the amount of data they can accommodate (roughly 70 million data points), they use inefficient compression algorithms that make the data files bulky, the dBASE files (.dbf) that store data attributes do not support null values.
 
 
 * ###### <a id="geojson">GeoJSON</a>
-    CSV (Comma Separated Values) files (extension .csv) display tabular data using the comma (“,”) or the semicolon (“;”) as a delimiter. The semicolon as a delimiter is popular in European countries, where the comma is generally used as a decimal separator.
-    
-    For standard tabular data containing figures and text strings and with a number of rows up to about one million [**[2]**](#2), the CSV data format should be preferred because it is an open format and its portability is much higher compared to spreadsheet formats like .xlsx or .ods. Data in CSV format can be easily inspected and analysed using popular programming languages for data science, like Python and R.
-    TSV (Tab Separated Values) files differ from CSV files only for the choice of the delimiter that in this case is the tab. One of the two formats made available by GBIF for data download is precisely the TSV file format.
+    GeoJSON is a spatial vector data format for encoding geospatial information and related non-spatial attributes based on the JSON data format presented [above](#json). A GeoJSON file must follow the open standard specification [RFC7946](https://datatracker.ietf.org/doc/html/rfc7946). Coordinates in a GeoJSON file are given with reference to the coordinate system [World Geodetic System 1984 (WSG84)](https://earth-info.nga.mil/index.php?dir=wgs84&action=wgs84) only, as the use of alternative systems in the past proved to cause compatibility issues.
+    GeoJSON objects can represent points, curves, and surfaces in coordinate space (Geometry), a spatially bounded entity (Feature), or a list of Features (FeatureCollection). Supported geometries in GeoJSON are ***Point***, ***LineString***, ***Polygon***, ***MultiPoint***, ***MultiLineString***, ***MultiPolygon***, and ***GeometryCollection***. Features are a combination of geometries and additional properties. According to the standard specification (see Introduction), GeoJSON "is concerned with geographic data in the broadest sense; anything with qualities that are bounded in geographical space might be a Feature whether or not it is a physical structure". For instance, GeoJSON is used as the data exchange format for annotations on digitised images of glass slides by the open-source software [QuPath](https://qupath.readthedocs.io/en/stable/docs/advanced/exporting_annotations.html).
+    Compared to the Shapefile, GeoJSON is a lighter data exchange format and, like JSON, it is well suited for transferring data to and from web APIs. Web development was indeed the main reason behind the development of the GeoJSON data format.
+
+
 * ###### <a id="gml">GML</a>
-
-
-* ###### <a id="open_street_map">Open Street Map XML</a>
-
-
-* ###### <a id="kml">KML/KMZ</a>
-
-
+    The Geography Markup Language data format (file extension .gml or .xml) is based on the ISO Standard [ISO 19136-1:2020](https://www.iso.org/standard/75676.html) that has been jointly developed by the ISO and the [Open Geospatial Consortium](https://www.ogc.org/standard/gml/). This ISO standard defines an XML encoding for transferring and storing geographic information conveying both spatial and non-spatial (data attributes) properties related to geographic entities. As already described above for [XML](#xml), GML allows for standardisation and verification of the transferred information. GML supports all common geometries used in geographic information systems like points, lines, and polygons. In addition, it can used to store and transfer more complex information on coverage, topology, and time series. Being based on the XML standard, remember that the X stays for ***eXtensible***, GML schemas can be easily extended to accommodate a new piece of information.
 
 
 * ###### <a id="geotiff">GeoTIFF</a>
+    The [Geographic Tagged Image File Format (GeoTIFF)](https://www.ogc.org/standard/geotiff/) is a raster data format used to store and transfer image files (e.g., satellite images) that also contain contextual geographic information in the form of metadata tags. Typical information contained in the metadata tags are the coordinate system used, the projection, etc. In a nutshell, the metadata provide all the information required to automatically overlay the image to a coordinate map. The format is based on the TIFF file format and the file extension for GeoTIFF images is simply .tif. However, while the geographic information is in the form of machine-readable data, the image itself remain an unstructured data type whose semantic content cannot be extracted automatically, unless ***ad hoc*** machine-readable labels declaring position and nature of relevant objects (e.g., rivers) are added to the image in the form of annotations. For an overview of possible ways to extract information from images please consult the section on [images](#images) in this document. GeoTIFF images can be very large and bulky as lossless TIFF files preserve image quality, but at the expense of image size.
 
 
+
+* ###### <a id="gpkg">GeoPackage</a>
+    [GeoPackage](https://www.geopackage.org) is a data format for storing and transferring geospatial information using a [SQLite container](https://www.sqlite.org/). GeoPackage is based on an [open standard](https://www.ogc.org/standard/geopackage/) that defines how and what kind of information can be stored in the container. GeoPackage files have the extension .gpkg and can contain both vector and raster data. Geospatial data in GeoPackage format can be efficiently transmitted as a SQLite database is lightweight and serverless and all the information contained by the database and its schema can be transferred in a single file.
 
 
 
