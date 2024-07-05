@@ -24,10 +24,6 @@
         - [GeoTIFF](#geotiff)
         - [GeoPackage](#gpkg)
     - [Sequencing data](#sequencing)
-        - [FastA](#fastA)
-        - [FastQ](#fastQ)
-        - [SAM/BAM/CRAM](#sam)
-        - [VCF]
     - [Images](#images)
     - [Other media](#other)
 - [Formats for machine-readable data specific to biodiversity science](#specific)
@@ -182,8 +178,10 @@ In many cases, machine-readable geospatial data formats are built on machine-rea
 
 
 <a id="3">**[3]**</a> [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) is a web map tile service based on an [open standard](https://www.ogc.org/standard/wmts/) of the [Open Geospatial Consortium (OGC)](https://www.ogc.org/), an organisation devoted to improve access to geospatial and location information.
+<br>
 
-
+* #### <a id="sequencing">Sequencing data</a>
+Sequencing data are increasingly employed in biodiversity science. They can be used to assess biodiversity, inform conservation efforts, and plan biodiversity restoration actions [(Theissinger et al., 2023)](#theissinger). All data formats currently in use for storing and transmitting sequencing data are machine-readable. These data, in fact, are generated as part of automatic workflows in which the sequencing information is expected to be consumed by machines and not by humans. This, however, was not always the case. For instance, the software tool [CD-HIT](https://sites.google.com/view/cd-hit), which allows to cluster and compare protein and nucleotide sequences, used to make the benchmark dataset available as a pdf file and did not output it in a machine-readable format [(Grešová et al., 2023)](#gresova). Currently, however, the [software outputs](http://www.bioinformatics.org/cd-hit/cd-hit-user-guide) consist in a FastA file of sequences and a text file listing clusters, which are both machine-readable. FastA (multiple file extensions such as .fasta and .fa) and FastQ (a version of the FastA data format that can also include information on sequencing) are the most popular text-based data formats for representing nucleotides and protein sequences. As text-based files, which in addition have a pre-ordered structure, they are easily machine-readable and a whole set of software tools in multiple programming languages are available to read and manipulate them. In addition to FastA and FastQ data formats, SAM (Sequence Alignment Map), BAM (Binary Alignment Map), and CRAM (Compressed Reference-oriented Alignment Map) are all machine-readable data formats used for reporting sequence alignment in a standardised way. [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf) is both human-readable and machine-readable, while BAM is a binary version of SAM and it is only machine-readable, but offers lossless compression of SAM files. [CRAM](https://samtools.github.io/hts-specs/CRAMv3.pdf) files are similar to BAM files, but the compression algorithm used can range from lossless to lossy compression and therefore the files can be much smaller than the equivalent BAM files. Another data format worth mentioning in relation to sequencing data is the [Variant Call Format (VCF)](http://samtools.github.io/hts-specs/VCFv4.5.pdf), another type of text file format with a precise structure, and therefore machine-readable, that is specifically used to store gene sequence variations.
 
 * #### <a id="images">Images</a>
 * #### <a id="other">Other media</a>
@@ -200,10 +198,16 @@ In many cases, machine-readable geospatial data formats are built on machine-rea
 <a id="avram">Avram</a>, E.D. (2003) Machine-Readable Cataloging (MARC) Program. In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1081/E-ELIS 120008993](https://www.taylorfrancis.com/chapters/edit/10.1081/E-ELIS3-120008993/machine-readable-cataloging-marc-1961–1974-elis-classic-henriette-avram).
 <br/>
 
+<a id="gresova">Grešová</a>, K. et al. (2003) Genomic benchmarks: a collection of datasets for genomic sequence classification, *BMC Genomic Data* 24(25) In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1186/s12863-023-01123-8](https://doi.org/10.1186/s12863-023-01123-8).
+<br/>
+
 <a id="iso">ISO/IEC</a> STANDARD 29500-1: 2016(E) (2016) Information technology - Document description and processing languages: Office Open XML File Formats. Vernier, Geneva, Switzerland: ISO Copyright Office [(available online)](https://standards.iso.org/ittf/PubliclyAvailableStandards/c071691_ISO_IEC_29500-1_2016.zip).
 <br/>
 
 <a id="sharma">Sharma</a>, G. (2016) Image-based data interfaces revisited: Barcodes and watermarks for the mobile and digital worlds, *8th International Conference on Communication Systems and Networks (COMSNETS)*, Bangalore, India, pp. 1-6. DOI: [10.1109/COMSNETS.2016.74400213](https://ieeexplore.ieee.org/document/7440021).
+<br/>
+
+<a id="theissinger">Theissinger</a>, K. et al. (2023) How genomics can help biodiversity conservation, *Trends in Genetics* 39(7), 545-559. doi: [10.1016/j.tig.2023.01.005](http://dx.doi.org/10.1016/j.tig.2023.01.005).
 <br/>
 
 <a id="usdataact">OPEN Government Data Act</a> H.R.1770 115th Congress (2017-2018) [(available online)](https://www.congress.gov/115/bills/hr1770/BILLS-115hr1770ih.pdf).
