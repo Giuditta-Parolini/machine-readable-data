@@ -6,37 +6,37 @@
 ------
 
 ### Table of Contents
-- [Preamble](#preamble)
-- [Introduction](#introduction)
-- [What does machine-readable mean?](#definition)
-- [Why do machine-readable data matter for biodiversity science?](#biodiversity)
-- [General formats for machine-readable data](#general)
-    - [Tabular data](#tabular)
+- [1. Preamble](#preamble)
+- [2. Introduction](#introduction)
+- [3. What does machine-readable mean?](#definition)
+- [4. Why do machine-readable data matter for biodiversity science?](#biodiversity)
+- [5. General formats for machine-readable data](#general)
+    - [5.1. Tabular data](#tabular)
         - [CSV, TSV](#csv)
         - [TXT](#txt)
         - [XML](#xml)
         - [JSON](#json)
         - [Parquet](#parquet)
-    - [Geographic data](#geographic)
+    - [5.2. Geographic data](#geographic)
         - [Shapefile](#shape)
         - [GeoJSON](#geojson)
         - [GML](#gml)
         - [GeoTIFF](#geotiff)
         - [GeoPackage](#gpkg)
-    - [Sequencing data](#sequencing)
-    - [Images](#images)
-    - [Other media](#other)
-- [Formats for machine-readable data specific to biodiversity science](#specific)
-- [Machine-readable data in the age of AI: Some final remarks](#ai)
-- [References](#references)
-- [Further readings](#further)
-- [Acknowledgements](#acknowledgements)
+    - [5.3. Sequencing data](#sequencing)
+    - [5.4. Images](#images)
+    - [5.5. Other media](#other)
+- [6. Formats for machine-readable data specific to biodiversity science](#specific)
+- [7. Machine-readable data in the age of AI: Some final remarks](#ai)
+- [8. References](#references)
+- [9. Further readings](#further)
+- [10. Acknowledgements](#acknowledgements)
 
 ------
 ------
 <br/>
 
-### <a id="preamble">Preamble</a> 
+### <a id="preamble">1. Preamble</a> 
 This Guide is written in [Markdown](https://www.markdownguide.org) as an invitation to start exploring tools with higher potential for machine-readability and information sharing compared to standard word processors. Markdown is a lightweight markup language that can be used for a variety of different tasks, from creating a website to writing a book. A document in Markdown format can be opened and edited using any text editor and does not require dedicated software like a PDF or a DOCX file. The trade-off is that styling options are limited compared to standard word processors, but human-readability remains satisfactory.
 
 If you wish to see the rendered Markdown document, there are many online and offline open-source editors available (e.g., [VSCode](https://code.visualstudio.com) + Markdown extensions). These editors are all largely compatible, but Markdown has many flavors and different editors may render some elements of this document in a slightly different fashion. A few Markdown editors do not support HTML style elements. This will prevent you from accessing the internal links in the *Table of Contents* and in the *References* in this document. If possible, choose a Markdown editor that also supports HTML.
@@ -46,7 +46,7 @@ If you prefer to consult this guide in a more human-readable format, this is not
 Markdown integrates seamlessly with version control systems and can, therefore, be used for collaborative projects. This Guide is published as a GitHub repository to give multiple authors the opportunity to contribute. If you wish to improve this document or you have comments and suggestions after reading it, you are welcome to create an issue in GitHub or make a Pull request. 
 <br/>
 
-### <a id="introduction">Introduction</a> 
+### <a id="introduction">2. Introduction</a> 
 This overview of recommendations and best practices for creating and sharing machine-readable data in biodiversity informatics wishes to contribute to the development of [FAIR](https://www.go-fair.org/fair-principles/) and sustainable data practices. The availability of machine-readable data is a key usability requirement, as it enables data sharing, (re)use, and integration at scale, and provides opportunities for automated quality control.
 
 **Paradoxical as it may sound, however, some of the most popular file formats, e.g., PDF, are not suitable for creating and transferring machine-readable data.** For instance, tabular data embedded in a PDF file such as a journal article, are human-readable, but cannot be accessed directly by a computer, while the same data presented in a properly formatted CSV file are machine-readable.
@@ -59,7 +59,7 @@ When we take into account biodiversity science drive towards data sharing and op
 The document begins presenting the concept of machine-readable data and why it is especially valuable in biodiversity informatics. Its core part is filled with suggestions and recommendations for machine-readable data formats suitable for biodiversity informatics. In this section, both machine-readable data formats of general use, like CSV, and machine-readable data formats that are specific to science, like NetCFD (Network Common Data Form), are discussed. A final section will sketch a few considerations about the value (and pitfalls) of machine-readable data in the age of AI.
 <br/>
 
-### <a id="definition">What does machine-readable mean?</a>  
+### <a id="definition">3. What does machine-readable mean?</a>  
 The concept of machine-readable data has a long history. It was introduced in the 1960s to refer to the physical input formats, such as magnetic tape and punched cards, typical for computers at the time, and was at the bottom of the development of the MARC (Machine-Readable Cataloging) programme initiated by the Library of Congress in the US to automate library operations [(Avram, 2003)](#avram). Nowadays, the concept of machine-readability has shifted from the realm of the physical media used to feed data into a computer to the choice of a suitable digital format for automatic data processing.
 
 The Open, Public, Electronic, and Necessary Government Data Act (2017-2018), which was passed by the US Congress, defines a machine-readable data format as "a format in which information or data can be easily processed by a computer without human intervention while ensuring no semantic meaning is lost" [(OPEN Government Data Act §3561(7))](#usdataact). The European Union takes its definition of [machine-readability](https://eur-lex.europa.eu/eli-register/glossary.html) from the Open Data Handbook. [Here](http://opendatahandbook.org/glossary/en/terms/machine-readable/), a machine-readable data format is defined as a structured data format that can be automatically read and processed by a computer. The definitions cited can be considered equivalent as the existence of a structured data format is a pre-requisite for maintaining the semantic meaning while automatically processing the data. A CSV document is an example of structured data because, for each data point (each row of the CSV file), a certain amount of information, i.e., the column values, is provided.
@@ -78,7 +78,7 @@ c) **There are potentially no limitations to the complexity of the data structur
  
 <br/>
 
-### <a id="biodiversity">Why do machine-readable data matter for biodiversity science?</a>  
+### <a id="biodiversity">4. Why do machine-readable data matter for biodiversity science?</a>  
 At the time of writing (June 2024) the Global Biodiversity Information Facility [GBIF](https://www.gbif.org) makes available via its partner institutions over 100.000 datasets amounting to several millions data records on plants, animals, and natural environments. These data range from taxonomic checklists to species observations to images and other media of digitised natural history collections. 
 
 While the raw data in themselves might not be machine-readable, for instance, this is the case for the digital images of collection specimens, all metadata for the records and all the tabular data are made available in a machine-readable format, such as tab delimited CSV files or XML files, following one of the data standards popular in biodiversity science. This makes all the records searchable and retrievable not just manually, but also automatically using the [GBIF API](https://techdocs.gbif.org/en/openapi/). 
@@ -88,12 +88,13 @@ Given the amount of records under examination, it becomes quickly apparent that 
 
 <br/>
 
-### <a id="general">General formats for machine-readable data</a> 
+### <a id="general">5. General formats for machine-readable data</a> 
 ***General formats*** is here used to refer to all machine-readable data formats that do not have any disciplinary boundary, but are widely adopted in science, business, and administration. There are quite a few of them. This section will not survey them all, but it will provide an overview of the most popular formats according to possible use cases.
 
 Image data and other media data are included in this section, even though these data are unstructured and therefore, strictly-speaking, not machine-readable. The reason to include them in this guide, however, is twofold. The first reason is that these data should at least have associated metadata (time, place, creator, rights, etc.) that are machine-readable and that provide relevant information about data creation and use (for instance, the license under which these data are available). The second reason is that unstructured data are becoming a big chunk of the data currently produced in biodiversity science. For instance, images, ranging from photos collected by citizen science projects to high-resolution specialised microscopy images, are becoming more and more relevant in biodiversity. Extracting the information they contain is an increasingly important pursuit that deserves some attention, as the methods applied are automatic methods that can generate machine-readable data for further analysis. <br>
 <br>
-#### <a id="tabular">Tabular data</a>
+
+#### <a id="tabular">5.1. Tabular data</a>
 Several types of scientific data, such as measurements and observations, are tabular data, that is to say, they are organised in rows and columns containing numbers, text strings for categorical/non-categorical data, urls, etc. These tabular data can be created using a spreadsheet software or extracted from a database via a query language. Regardless of how they are generated, tabular data should always be made available in a machine-readable format that makes their analysis and re-use immediate. Several opportunities are available.
     
 * ###### <a id="csv">CSV, TSV</a>
@@ -143,7 +144,7 @@ RDF
 <br>
  
 
-* #### <a id="geographic">Geographic data</a>
+* #### <a id="geographic">5.2. Geographic data</a>
 Geospatial information is popular in biodiversity science. It is employed to assess areas with high biodiversity and track changes in species distribution over time, just to mention a few of the possible uses. This type of information is crucial for informing species conservation and management strategies, and biodiversity data portals, like GBIF [**[3]**](#3), routinely make available tools to overlay the datasets they are indexing on geographic maps. 
 Geographic data deserve, therefore, a section of their own in a guide on machine-readable data formats for biodiversity science. The good news is that **proper geospatial information data formats, such as GeoJSON or GeoTIFF, are machine-readable**. The not so good news is that there is still geographic and location information distributed using image formats without proper georeferencing and this makes (re)using the geospatial information in the images problematic.
 There are dozens of geospatial information data formats, both proprietary and non-proprietary, available and it will not be possible to examine them individually in this guide. In the following section only a few of the formats most relevant and popular for biodiversity science will be considered. For a general [overview of geospatial data formats based on open standards](https://www.ogc.org/standards/), please consult the website of the Open Geospatial Consortium.
@@ -180,11 +181,15 @@ In many cases, machine-readable geospatial data formats are built on machine-rea
 <a id="3">**[3]**</a> [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) is a web map tile service based on an [open standard](https://www.ogc.org/standard/wmts/) of the [Open Geospatial Consortium (OGC)](https://www.ogc.org/), an organisation devoted to improve access to geospatial and location information.
 <br>
 
-* #### <a id="sequencing">Sequencing data</a>
+* #### <a id="sequencing">5.3 Sequencing data</a>
 Sequencing data are increasingly employed in biodiversity science. They can be used to assess biodiversity, inform conservation efforts, and plan biodiversity restoration actions [(Theissinger et al., 2023)](#theissinger). All data formats currently in use for storing and transmitting sequencing data are machine-readable. These data, in fact, are generated as part of automatic workflows in which the sequencing information is expected to be consumed by machines and not by humans. This, however, was not always the case. For instance, the software tool [CD-HIT](https://sites.google.com/view/cd-hit), which allows to cluster and compare protein and nucleotide sequences, used to make the benchmark dataset available as a pdf file and did not output it in a machine-readable format [(Grešová et al., 2023)](#gresova). Currently, however, the [software outputs](http://www.bioinformatics.org/cd-hit/cd-hit-user-guide) consist in a FastA file of sequences and a text file listing clusters, which are both machine-readable. FastA (multiple file extensions such as .fasta and .fa) and FastQ (a version of the FastA data format that can also include information on sequencing) are the most popular text-based data formats for representing nucleotides and protein sequences. As text-based files, which in addition have a pre-ordered structure, they are easily machine-readable and a whole set of software tools in multiple programming languages are available to read and manipulate them. In addition to FastA and FastQ data formats, SAM (Sequence Alignment Map), BAM (Binary Alignment Map), and CRAM (Compressed Reference-oriented Alignment Map) are all machine-readable data formats used for reporting sequence alignment in a standardised way. [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf) is both human-readable and machine-readable, while BAM is a binary version of SAM and it is only machine-readable, but offers lossless compression of SAM files. [CRAM](https://samtools.github.io/hts-specs/CRAMv3.pdf) files are similar to BAM files, but the compression algorithm used can range from lossless to lossy compression and therefore the files can be much smaller than the equivalent BAM files. Another data format worth mentioning in relation to sequencing data is the [Variant Call Format (VCF)](http://samtools.github.io/hts-specs/VCFv4.5.pdf), another type of text file format with a precise structure, and therefore machine-readable, that is specifically used to store gene sequence variations.
 
-* #### <a id="images">Images</a>
-* #### <a id="other">Other media</a>
+* #### <a id="images">5.4 Images</a>
+As already mentioned in [Section 3](#definition) while providing a definition of machine-readability, the vast majority of images, with the exception of image-based data interfaces like QR codes, are unstructured data and therefore not machine-readable. Yet, image data are at the core of multiple key human activities, like medical diagnostics or material science, and improving image quality, processing image data, and analysing the information contained in them has been an ongoing effort for decades in the fields of digital image processing [(Gonzalez & Woods, 2018)](#gonzalez) and computer vision [(Szeliski, 2022)](#szeliski). As a result, algorithms and workflows have been devised to extract at least some information from digital images. The examples that follows do not want to be comprehensive, but just to suggest a few of the possible methodologies currently available.
+Before discussing them, however, a brief introduction to digital images as computational objects is necessary. A digital image can be represented as an array (a matrix in mathematical terms) of real numbers. Each element of the array represents a "picture element", a quantity better known as a ***pixel***. You can easily view the individual pixels that form a digital image by zooming in. Each pixel is displayed as a coloured square or rectangle. The colour of the pixel depends on the value in the array. How? The difference is made by the colour representation chosen for the image.  
+
+
+* #### <a id="other">5.5 Other media</a>
 <br/>
 
 ### <a id="specific">Formats for machine-readable data specific to biodiversity science</a>
@@ -198,6 +203,9 @@ Sequencing data are increasingly employed in biodiversity science. They can be u
 <a id="avram">Avram</a>, E.D. (2003) Machine-Readable Cataloging (MARC) Program. In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1081/E-ELIS 120008993](https://www.taylorfrancis.com/chapters/edit/10.1081/E-ELIS3-120008993/machine-readable-cataloging-marc-1961–1974-elis-classic-henriette-avram).
 <br/>
 
+<a id="gonzalez">Gonzalez</a>, R.C. and Woods, R.E. (2018) Digital Image Processing (4th edition). Pearson Education, New York.
+<br/>
+
 <a id="gresova">Grešová</a>, K. et al. (2003) Genomic benchmarks: a collection of datasets for genomic sequence classification, *BMC Genomic Data* 24(25) In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1186/s12863-023-01123-8](https://doi.org/10.1186/s12863-023-01123-8).
 <br/>
 
@@ -205,6 +213,9 @@ Sequencing data are increasingly employed in biodiversity science. They can be u
 <br/>
 
 <a id="sharma">Sharma</a>, G. (2016) Image-based data interfaces revisited: Barcodes and watermarks for the mobile and digital worlds, *8th International Conference on Communication Systems and Networks (COMSNETS)*, Bangalore, India, pp. 1-6. DOI: [10.1109/COMSNETS.2016.74400213](https://ieeexplore.ieee.org/document/7440021).
+<br/>
+
+<a id="szeliski">Szeliski</a>, R. (2022) Computer Vision: Algorithms and Applications (2nd edition). springer, Cham. DOI: https://doi.org/10.1007/978-3-030-34372-9
 <br/>
 
 <a id="theissinger">Theissinger</a>, K. et al. (2023) How genomics can help biodiversity conservation, *Trends in Genetics* 39(7), 545-559. doi: [10.1016/j.tig.2023.01.005](http://dx.doi.org/10.1016/j.tig.2023.01.005).
