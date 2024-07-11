@@ -29,8 +29,7 @@
 - [6. Formats for machine-readable data specific to biodiversity science](#specific)
 - [7. Machine-readable data in the age of AI: Some final remarks](#ai)
 - [8. References](#references)
-- [9. Further readings](#further)
-- [10. Acknowledgements](#acknowledgements)
+- [9. Acknowledgements](#acknowledgements)
 
 ------
 ------
@@ -178,7 +177,7 @@ In many cases, machine-readable geospatial data formats are built on machine-rea
 
 
 
-<a id="3">**[3]**</a> [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) is a web map tile service based on an [open standard](https://www.ogc.org/standard/wmts/) of the [Open Geospatial Consortium (OGC)](https://www.ogc.org/), an organisation devoted to improve access to geospatial and location information.
+    <a id="3">**[3]**</a> [GBIF Maps API](https://techdocs.gbif.org/en/openapi/v2/maps) is a web map tile service based on an [open standard](https://www.ogc.org/standard/wmts/) of the [Open Geospatial Consortium (OGC)](https://www.ogc.org/), an organisation devoted to improve access to geospatial and location information.
 <br>
 
 * #### <a id="sequencing">5.3 Sequencing data</a>
@@ -194,17 +193,25 @@ In conclusion of this section, it is important to add a comment related to digit
 
 
 * #### <a id="other">5.5 Other media</a>
+In biodiversity science, not only images, but also other media are routinely used for scientific research. Video data, for instance, can be employed to detect animals in ecology studies [(Weinstein, 2018)](#weinstein), audio data can be used for non-invasive biodiversity monitoring [(Kvsn et al., 2020)](#kvsn), and 3D-models of museum specimens can provide relevant information for studies of genetic and ecological bases of phenotypes [(Blackburn et al., 2024)](#blackburn). These media data are distributed in a variety of proprietary and open data formats that differ considerably in relation to file size and quality, and hardware and software compatibility. For instance, popular formats for multimedia files based on ISO standards are MP4 (video) [(ISO/IEC 14496-14:2020(en))](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:14496:-14:ed-3:v1:en) and MP3 (audio) [(ISO/IEC 13818-3:1998(en)](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:13818:-3:ed-2:v1:en). For volumetric 3D models [DICOM](https://www.dicomstandard.org), the reference standard for medical imaging is often used. 
+Similarly to images, the other media data discussed in this section are not machine-readable and information from them can be extracted only by processing. Machine learning models are especially popular to work with these data. For instance, several publications appeared in recent years discussing how YOLO [**[4]**](#4), which is a state-of-the-art model for object detection in videos, can be used for the needs of biodiversity science. Ad hoc models for object/sound detection [(Müller et al., 2023)](#muller) are also implemented, but often with mixed results due to lack of adequate training data. As already noted above, the devices that produce digital media also generate metadata and, at least these metadata, should be made available in a machine-readable format and provide all the information required for the use and re-use of these multimedia data.
+
+<a id="4">**[4]**</a>  
+YOLO (You Look Only Once) is a very popular family of models for object detection originally presented in [2015](https://arxiv.org/abs/1506.02640). 
 <br/>
 
-### <a id="specific">Formats for machine-readable data specific to biodiversity science</a>
+### <a id="specific">6. Formats for machine-readable data specific to biodiversity science</a>
 
 <br/><br/>
 
-### <a id="ai">Machine-readable data in the age of AI: Some final remarks</a> 
+### <a id="ai">7. Machine-readable data in the age of AI: Some final remarks</a> 
 <br/><br/>
 
-### <a id="references">References</a>
+### <a id="references">8. References</a>
 <a id="avram">Avram</a>, E.D. (2003) Machine-Readable Cataloging (MARC) Program. In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1081/E-ELIS 120008993](https://www.taylorfrancis.com/chapters/edit/10.1081/E-ELIS3-120008993/machine-readable-cataloging-marc-1961–1974-elis-classic-henriette-avram).
+<br/>
+
+<a id="blackburn">Blackburn</a>, D.C. et al. (2024) Increasing the impact of vertebrate scientific collections through 3D imaging: The openVertebrate (oVert) Thematic Collections Network, *BioScience* 74(3), 169-186. DOI: [10.1093/biosci/biad120](https://doi.org/10.1093/biosci/biad120).
 <br/>
 
 <a id="gonzalez">Gonzalez</a>, R.C. and Woods, R.E. (2018) Digital Image Processing (4th edition). Pearson Education, New York.
@@ -214,6 +221,12 @@ In conclusion of this section, it is important to add a comment related to digit
 <br/>
 
 <a id="iso">ISO/IEC</a> STANDARD 29500-1: 2016(E) (2016) Information technology - Document description and processing languages: Office Open XML File Formats. Vernier, Geneva, Switzerland: ISO Copyright Office [(available online)](https://standards.iso.org/ittf/PubliclyAvailableStandards/c071691_ISO_IEC_29500-1_2016.zip).
+<br/>
+
+<a id="kvsn">Kvsn</a>, R.R.  et al. (2020) Bioacoustics Data Analysis – A Taxonomy, Survey and Open Challenges, *IEEE Access* 8, 57684-57708. doi: [10.1109/ACCESS.2020.2978547](http://dx.doi.org/10.1109/ACCESS.2020.2978547).
+<br/>
+
+<a id="muller">Müller</a>, J. et al. (2023) Soundscapes and deep learning enable tracking biodiversity recovery in tropical forests, *Nature Communications*, 14, 6191. DOI:[10.1038/s41467-023-41693-w](https://doi.org/10.1038/s41467-023-41693-w-pp).
 <br/>
 
 <a id="sharma">Sharma</a>, G. (2016) Image-based data interfaces revisited: Barcodes and watermarks for the mobile and digital worlds, *8th International Conference on Communication Systems and Networks (COMSNETS)*, Bangalore, India, pp. 1-6. DOI: [10.1109/COMSNETS.2016.74400213](https://ieeexplore.ieee.org/document/7440021).
@@ -228,12 +241,14 @@ In conclusion of this section, it is important to add a comment related to digit
 <a id="usdataact">OPEN Government Data Act</a> H.R.1770 115th Congress (2017-2018) [(available online)](https://www.congress.gov/115/bills/hr1770/BILLS-115hr1770ih.pdf).
 <br/>
 
+<a id="weinstein">Weinstein</a>, B.G. (2018) Scene-specific convolutional neural networks for video-based biodiversity detection, *Methods in Ecology and Evolution* 9, 1435-1441. DOI:[10.1111/2041-210X.13011](https://doi.org/10.1111/2041-210X.13011).
+<br/>
+
 <br/><br/>
 
-### <a id="further">Further readings</a> 
-<br/><br/>
 
-### <a id="acknowledgements">Acknowledgements</a>  
+
+### <a id="acknowledgements">9. Acknowledgements</a>  
 This research was supported by the German Research Foundation (DFG) under grant number 528674292. 
 <br/>
 
