@@ -1,0 +1,5 @@
+External data sources to download in this folder
+
+Breeding Bird Atlases (Data.gov) [RDF version]
+https://data.ny.gov/api/views/vk8g-ypxi/rows.rdf?accessType=DOWNLOAD
+
