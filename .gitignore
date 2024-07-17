@@ -25,4 +25,4 @@ node_modules
 .vscode/
 
 # External data sources
-external_data_sources/*
+notebook_with_examples/external_data_sources/breeding_bird_atlases.rdf
