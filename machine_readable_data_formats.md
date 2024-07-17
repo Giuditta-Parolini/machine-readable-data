@@ -16,6 +16,7 @@
         - [TXT](#txt)
         - [XML](#xml)
         - [JSON](#json)
+        - [RDF](#rdf)
         - [Parquet](#parquet)
     - [5.2. Geographic data](#geographic)
         - [Shapefile](#shape)
@@ -121,15 +122,11 @@ Several types of scientific data, such as measurements and observations, are tab
     <br>
 
 
-RDF 
-
 * ###### <a id="xml">XML</a>
     The [eXtensible Markup Language (XML)](https://www.w3.org/TR/xml/) is a file format used for storing and transferring data. It is called eXtensible Markup Language, because the content in a XML file is a combination of tags, which logically structure the content, and proper data. XML data files are both machine-readable and human-readable.
     The XML data format was developed in the context of the [World Wide Web Consortium (W3C)](https://www.w3.org) and it is a W3C recommendation, i.e., a standard for web communication. All XML processors accept the character encodings UTF-8 and UTF-16. UTF-8 is also in this case the recommended encoding to avoid issues at reading time.
     If the XML document has a **prolog** (optional feature) [e.g., <?xml version="1.0" encoding="UTF-8"?>], it must be placed at the beginning, before the file content. Every XML file has a **root** entity, which is the entity a parser tool uses to begin reading the content of the XML document. All the content in the XML file is packaged in storage units, the elements, enclosed by appropriate start- and end- tags and properly nested. Tags in a XML file are case sensitive and cannot contain empty spaces. The only reserved tag, not available to the xml document creator, is xml itself. XML documents must be [well-formed](https://www.w3.org/TR/xml/#dt-wellformed) according to the WC3 specification, otherwise a fatal error is raised by the parser. In addition, a distinctive feature of the XML file format is that it can be also validated using either a **XML Schema Definition (XSD)** or a **Document Type Definition (DTD)** and an appropriate parser and it can also have comments, unlike CSV files. XML elements can have attributes. For instance, the literary genre can be an attribute for a book element in a XML file that lists the contents of a library. Attributes are enclosed in element tags and need to be put within quotation marks.
     <br>
-    
-    
      
 * ###### <a id="json">JSON</a>
     The JavaScript Object Notation [(JSON)](https://ecma-international.org/publications-and-standards/standards/ecma-404/) format is a data interchange format that is both machine-readable and human-readable. As suggested by the name, the JSON format is built upon the JavaScript syntax and standard. However, JSON is language independent and JSON files can be created and processed using any programming language of choice because the structures used by JSON are common to all the main object oriented languages.
@@ -137,6 +134,9 @@ RDF
     JSON is probably the most popular data exchange format for web APIs, as it is a lightweight alternative to XML for compact data serialization. JSON documents are also increasingly popular for use in NoSQL databases like MongoDB because they are flexible in storing multiple data types and can easily accommodate changes in data model as information is saved as documents rather than as tables. The only condition is that the JSON documents satisfy all formal validity requirements for the JSON format (e.g., no curly or square braces left open, proper use of the comma to separate elements, etc.)
     <br>
 
+* ###### <a id="rdf">RDF</a>
+    The Resource Description Framework (RDF) is a [W3C standard](https://www.w3.org/RDF/) for data interchange on the web. RDF files allow to exchange data using a triplet syntax (subject-predicate-object) that can be turned into a directed graph. Each triplet element is identified by a URI (Uniform Resource Identifier). Triplets ca be serialised using multiple formats. A couple of the most popular serialisation formats are [RDF/XML (.rdf)](https://www.w3.org/TR/rdf-syntax-grammar/) and [JSON-LD (.jsonld)]().
+    <br>   
 
 * ###### <a id="parquet">PARQUET</a>
     The PARQUET file format (file extension .parquet) is machine-readable, free, and open-source. Like JSON it is a language agnostic format that can be manipulated using multiple programming languages. PARQUET files store data column-based rather than row-based, as in CSV. This means a reduction in memory space occupied by the data and faster query execution due to data skipping and predicate push down (using metadata with summary statistics to ignore irrelevant data objects at query time). In addition, the PARQUET file format can be efficiently compressed and decompressed and it is suitable for storing complex and nested data structures. Due to these features, PARQUET files are popular for accessing and querying big datasets (in the GigaByte range) of many types: not just tabular data, but also images, videos, and documents can be stored in PARQUET format. <br>
@@ -193,7 +193,7 @@ In conclusion of this section, it is important to add a comment related to digit
 
 
 * #### <a id="other">5.5 Other media</a>
-In biodiversity science, not only images, but also other media are routinely used for scientific research. Video data, for instance, can be employed to detect animals in ecology studies [(Weinstein, 2018)](#weinstein), audio data can be used for non-invasive biodiversity monitoring [(Kvsn et al., 2020)](#kvsn), and 3D-models of museum specimens can provide relevant information for studies of genetic and ecological bases of phenotypes [(Blackburn et al., 2024)](#blackburn). These media data are distributed in a variety of proprietary and open data formats that differ considerably in relation to file size and quality, and hardware and software compatibility. For instance, popular formats for multimedia files based on ISO standards are MP4 (video) [(ISO/IEC 14496-14:2020(en))](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:14496:-14:ed-3:v1:en) and MP3 (audio) [(ISO/IEC 13818-3:1998(en)](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:13818:-3:ed-2:v1:en). For volumetric 3D models [DICOM](https://www.dicomstandard.org), the reference standard for medical imaging is often used. 
+In biodiversity science, not only images, but also other media are routinely used for scientific research. Video data, for instance, can be employed to detect animals in ecology studies [(Weinstein, 2018)](#weinstein), audio data can be used for non-invasive biodiversity monitoring [(Kvsn et al., 2020)](#kvsn), and 3D-models of museum specimens can provide relevant information for studies of genetic and ecological bases of phenotypes [(Blackburn et al., 2024)](#blackburn). These media data are distributed in a variety of proprietary and open data formats that differ considerably in relation to file size and quality, and hardware and software compatibility. For instance, popular formats for multimedia files based on ISO standards are MP4 (video) [(ISO/IEC 14496-14:2020(en))](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:14496:-14:ed-3:v1:en) and MP3 (audio) [(ISO/IEC 13818-3:1998(en)](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:13818:-3:ed-2:v1:en). [DICOM](https://www.dicomstandard.org), the reference standard for medical imaging, is often used for volumetric 3D models.
 Similarly to images, the other media data discussed in this section are not machine-readable and information from them can be extracted only by processing. Machine learning models are especially popular to work with these data. For instance, several publications appeared in recent years discussing how YOLO [**[4]**](#4), which is a state-of-the-art model for object detection in videos, can be used for the needs of biodiversity science. Ad hoc models for object/sound detection [(Müller et al., 2023)](#muller) are also implemented, but often with mixed results due to lack of adequate training data. As already noted above, the devices that produce digital media also generate metadata and, at least these metadata, should be made available in a machine-readable format and provide all the information required for the use and re-use of these multimedia data.
 
 <a id="4">**[4]**</a>  
