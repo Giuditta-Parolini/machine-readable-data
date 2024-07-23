@@ -28,6 +28,9 @@
     - [5.4. Images](#images)
     - [5.5. Other media](#other)
 - [6. Formats for machine-readable data specific to biodiversity science](#specific)
+    - [DwC-A](#shape)
+    - [ABCD and extensions](#geojson)
+    - [Other TDWG standards](#gml)
 - [7. Machine-readable data in the age of AI: Some final remarks](#ai)
 - [8. References](#references)
 - [9. Acknowledgements](#acknowledgements)
@@ -84,8 +87,6 @@ At the time of writing (June 2024) the Global Biodiversity Information Facility 
 While the raw data in themselves might not be machine-readable, for instance, this is the case for the digital images of collection specimens, all metadata for the records and all the tabular data are made available in a machine-readable format, such as tab delimited CSV files or XML files, following one of the data standards popular in biodiversity science. This makes all the records searchable and retrievable not just manually, but also automatically using the [GBIF API](https://techdocs.gbif.org/en/openapi/). 
 
 Given the amount of records under examination, it becomes quickly apparent that having available information in a machine-readable format offers the opportunity to access data at scale, combine them for analysis that goes beyond the original aims of their creators, and redistribute them to a larger public. Yet, this is not always the case, especially with the smaller datasets associated to scientific articles. Due to the lack of a general policy for biodiversity science publications and the fact that biodiversity research appears in journals belonging to different disciplines, it is not uncommon to still find published biodiversity data only available in tables saved in DOCX files or compiled in spreadsheets that are not machine-readable. An even greater concern is for the unpublished data produced during research projects. The increased availability and usage of data management tools and platforms facilitate the implementation of best practices, but they are not ***per se*** a guarantee that the data created are machine-readable. For this reason, this guide provides an overview of suitable machine-readable data formats for biodiversity research, illustrates their context of application, and gives advice against possible pitfalls in their implementation.
-
-
 <br/>
 
 ### <a id="general">5. General formats for machine-readable data</a> 
@@ -201,6 +202,18 @@ YOLO (You Look Only Once) is a very popular family of models for object detectio
 <br/>
 
 ### <a id="specific">6. Formats for machine-readable data specific to biodiversity science</a>
+The biodiversity informatics community has invested considerable time and effort in the development of data standards specific to the needs of biodiversity science. The standards [webpage](https://www.tdwg.org/standards/) curated by [TDWG (Biodiversity Information Standards)](https://www.tdwg.org) is probably the best starting point to explore the standards used by the biodiversity community. As discussed in the [Glossary](./glossary.md#data-standard), a data standard is typically associated to a data format, the element of interest in this guide. All data standards used in biodiversity science are associated to machine-readable data formats because for decades the biodiversity community has invested considerable time and effort in promoting tools that facilitate automatic data exchange and integration at scale. In this guide only a few of the most popular biodiversity standards used for data exchange are explicitly discussed. For all other use cases endorsed by TDWG and not examined here please refer to the Standards section on the TDWG website.
+
+* ###### <a id="DwCA">DwC-A</a>
+   [Darwin Core Archive (DwC-A)](https://ipt.gbif.org/manual/en/ipt/latest/dwca-guide) is the data format associated to the [Darwin Core standard](https://dwc.tdwg.org). A Darwin Core Archive consists of 
+
+* ###### <a id="abcd">ABCD and extensions</a>
+  
+
+* ###### <a id="other_formats">Other machine-readable formats used in biodiversity science</a>
+
+
+
 
 <br/><br/>
 
