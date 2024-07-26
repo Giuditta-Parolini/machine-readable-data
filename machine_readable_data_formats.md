@@ -42,11 +42,13 @@
 ### <a id="preamble">1. Preamble</a> 
 This Guide is written in [Markdown](https://www.markdownguide.org) as an invitation to start exploring tools with higher potential for machine-readability and information sharing compared to standard word processors. Markdown is a lightweight markup language that can be used for a variety of different tasks, from creating a website to writing a book. A document in Markdown format can be opened and edited using any text editor and does not require dedicated software like a PDF or a DOCX file. The trade-off is that styling options are limited compared to standard word processors, but human-readability remains satisfactory.
 
-If you wish to see the rendered Markdown document, there are many online and offline open-source editors available (e.g., [VSCode](https://code.visualstudio.com) + Markdown extensions). These editors are all largely compatible, but Markdown has many flavors and different editors may render some elements of this document in a slightly different fashion. A few Markdown editors do not support HTML style elements. This will prevent you from accessing the internal links in the *Table of Contents* and in the *References* in this document. If possible, choose a Markdown editor that also supports HTML.
+If you wish to see the rendered Markdown document, there are many online and offline open-source editors available (e.g., [VSCode](https://code.visualstudio.com) + Markdown extensions). These editors are all largely compatible, but Markdown has many flavors and different editors may render some elements of this document in a slightly different fashion. A few Markdown editors do not support HTML style elements. This will prevent you from accessing the internal links in the sections *Table of Contents* and *References*. If possible, choose a Markdown editor that also supports HTML.
 
 If you prefer to consult this guide in a more human-readable format, this is not an issue. A Markdown document can be turned into a PDF in a few clicks. This document can even be published to a webpage, as the transformation in HTML is equally straightforward. You can then decide to read this document as a human reader would, have a computer extract automatically pieces of information that are of special interest to you, even scrape the data when this document is publicly accessible on a webpage.
 
-Markdown integrates seamlessly with version control systems and can, therefore, be used for collaborative projects. This Guide is published as a GitHub repository to give multiple authors the opportunity to contribute. If you wish to improve this document or you have comments and suggestions after reading it, you are welcome to create an issue in GitHub or make a Pull request. 
+Markdown integrates seamlessly with version control systems and can, therefore, be used for collaborative projects. This Guide is published as a GitHub repository to give multiple authors the opportunity to contribute. If you wish to improve this document or you have comments and suggestions after reading it, you are welcome to create an issue in GitHub or make a Pull request.
+
+MENTION EXAMPLES in Jupyter Notebook.
 <br/>
 
 ### <a id="introduction">2. Introduction</a> 
@@ -118,7 +120,7 @@ Several types of scientific data, such as measurements and observations, are tab
 <br>
 
 
-* ###### <a id="txt">TXT</a>
+* ###### <a id="txt">TXT</a> 
     TXT files are machine-readable, but only support plain text format. UTF-8 is the recommended character encoding method to avoid issues, similarly to what already suggested for CVS/TSV files. TXT files should be the preferred machine-readable format for unstructured text that needs to be further analysed/mined. For annotated text, a machine-readable format like XML could be used. Tabular data can also be manipulated as strings of characters, even when the string characters are all numbers, therefore TXT files can be used to store tabular data. However,the CSV/TSV file format should still be the preferred choice in this case. 
     <br>
 
