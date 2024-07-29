@@ -30,7 +30,7 @@
 - [6. Formats for machine-readable data specific to biodiversity science](#specific)
     - [DwC-A](#shape)
     - [ABCD and extensions](#geojson)
-    - [Other TDWG standards](#gml)
+    - [Other machine-readable formats used in biodiversity science](#other_formats)
 - [7. Machine-readable data in the age of AI: Some final remarks](#ai)
 - [8. References](#references)
 - [9. Acknowledgements](#acknowledgements)
@@ -40,7 +40,7 @@
 <br/>
 
 ### <a id="preamble">1. Preamble</a> 
-This Guide is written in [Markdown](https://www.markdownguide.org) as an invitation to start exploring tools with higher potential for machine-readability and information sharing compared to standard word processors. Markdown is a lightweight markup language that can be used for a variety of different tasks, from creating a website to writing a book. A document in Markdown format can be opened and edited using any text editor and does not require dedicated software like a PDF or a DOCX file. The trade-off is that styling options are limited compared to standard word processors, but human-readability remains satisfactory.
+This Guide on machine-readable data formats is written in [Markdown](https://www.markdownguide.org) as an invitation to start exploring tools with higher potential for machine-readability and information sharing compared to standard word processors. Markdown is a [markup language](https://www.britannica.com/technology/markup-language). A document in Markdown format can be opened and edited using any text editor and does not require dedicated software like a PDF or a DOCX file. The trade-off is that styling options are limited compared to standard word processors, but human-readability remains satisfactory.
 
 If you wish to see the rendered Markdown document, there are many online and offline open-source editors available (e.g., [VSCode](https://code.visualstudio.com) + Markdown extensions). These editors are all largely compatible, but Markdown has many flavors and different editors may render some elements of this document in a slightly different fashion. A few Markdown editors do not support HTML style elements. This will prevent you from accessing the internal links in the sections *Table of Contents* and *References*. If possible, choose a Markdown editor that also supports HTML.
 
@@ -48,7 +48,10 @@ If you prefer to consult this guide in a more human-readable format, this is not
 
 Markdown integrates seamlessly with version control systems and can, therefore, be used for collaborative projects. This Guide is published as a GitHub repository to give multiple authors the opportunity to contribute. If you wish to improve this document or you have comments and suggestions after reading it, you are welcome to create an issue in GitHub or make a Pull request.
 
-MENTION EXAMPLES in Jupyter Notebook.
+The Guide on machine-readable data formats is complemented by a Jupyter notebook with examples. The notebook and related data are in a separate folder in this repository. I suggest to go through the examples while reading this document, as the cases selected give a clear illustration of the statements made. In order to access the notebook, you need a local installation of Jupyter notebook or a cloud service that allows access to Jupyter notebook. All the data for running the examples are available in the folder.
+
+Alongside this materials, the GitHub repository also includes a **glossary** defining key terms used in the Guide, such as *data format* and *data standard*, and a quick reference **list of open data formats** divided according to data type (tabular, geographic, etc.).
+
 <br/>
 
 ### <a id="introduction">2. Introduction</a> 
@@ -210,7 +213,7 @@ The biodiversity informatics community has invested considerable time and effort
    [Darwin Core Archive (DwC-A)](https://ipt.gbif.org/manual/en/ipt/latest/dwca-guide) is the data format associated to the [Darwin Core standard](https://dwc.tdwg.org). A Darwin Core Archive is a package of text files in CSV or TSV format stored in a zip folder. The data files are supplemented by an XML metafile (meta.xml) that provides information on the content and formatting of the data files in the archive and by a machine-readable metadata file compiled using a known standard, such as the [Ecological Metadata Standard (EML)](https://eml.ecoinformatics.org). Each archive includes a core data file that stores all the data using a Darwin Core-compliant terminology and assigns a unique identifier to each data record. The identifier is used to link the information in the core file to the information available in the extension data files. DwC-A is the preferred format for data publication in GBIF and, as such, experience an overall high popularity in the biodiversity community.
 
 * ###### <a id="abcd">ABCD and extensions</a>
-   Alongside the DwC-A data format, GBIF also accepts data submissions that follow the specifications of the [ABCD (Access to Biological Collections Data) standard](https://abcd.tdwg.org) and its extensions **[[5]](#5)**. The ABCD standard is also maintained by TDWG and it is mainly conceived for exchanging data about living and preserved natura history and botanical collection specimens and field observations. For the ABCD data standard there is no formalised data format analog to DwC-A for the Darwin Core Archive. Data that follows the specifications of the standard, however, are always transmitted in XML, therefore they are in a machine-readable format. The structure of the XML data files follows the specifications and the terminology set out by the ABCD data standard.
+   Alongside the DwC-A data format, GBIF also accepts data submissions that follow the specifications of the [ABCD (Access to Biological Collections Data) standard](https://abcd.tdwg.org) and its extensions **[[5]](#5)**. The ABCD standard is also maintained by TDWG and it is mainly conceived for exchanging data about living and preserved natural history and botanical collection specimens and field observations. For the ABCD data standard there is no formalised data format analog to DwC-A for the Darwin Core Archive. Data that follows the specifications of the standard, however, are always transmitted in XML, therefore they are in a machine-readable format. The structure of the XML data files follows the specifications and the terminology set out by the ABCD data standard.
 
 * ###### <a id="other_formats">Other machine-readable formats used in biodiversity science</a>
    Alongside the data formats mentioned above, which are maintained by TDWG and regularly used for data exchange within the biodiversity community, there are other science-specific machine readable data formats that find application in biodiversity science. One example is the [Network Common Data Form (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) that is both a data standard and a data format and has been specifically developed to deal with array-oriented scientific data. In biodiversity science, the NetCDF data format is used to share datasets on [Essential Biodiversity Variables](https://portal.geobon.org/home). Data in NetCDF format are stored in a single file structured as an header section followed by a data section. Building NetCDF files requires the use of the [HDF5 library](https://hdfgroup.org/solutions/hdf5/).   
