@@ -159,7 +159,7 @@ Several types of scientific data, such as measurements and observations, are tab
     &nbsp;
 
 * ###### <a id="rdf">RDF</a>
-    The Resource Description Framework (RDF) is a [W3C standard](https://www.w3.org/RDF/) for data interchange on the web. RDF files allow to exchange data using a triplet syntax (subject-predicate-object) that can be turned into a directed graph. Each triplet element is identified by a URI (Uniform Resource Identifier). Triplets ca be serialised using multiple formats. A couple of the most popular serialisation formats are [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/) (.rdf) and [JSON-LD](https://json-ld.org) (.jsonld).
+    The Resource Description Framework (RDF) is a [W3C standard](https://www.w3.org/RDF/) for data interchange on the web. RDF files allow to exchange data using a triplet syntax (subject-predicate-object) that can be turned into a directed graph. Each triplet element is identified by a URI (Uniform Resource Identifier). Triplets can be serialised using multiple formats. A couple of the most popular serialisation formats are [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/) (.rdf) and [JSON-LD](https://json-ld.org) (.jsonld).
     &nbsp;   
 
 * ###### <a id="parquet">PARQUET</a>
