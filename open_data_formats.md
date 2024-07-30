@@ -13,10 +13,15 @@
 - [Biodiversity-specific data](#biodiversity_data)
 
 ### Proprietary formats with open specifications
+- XLSX
+- DOCX
+- BMP
+- Shapefile
 
 ------
+###### The website [Fileinfo.com](https://fileinfo.com/filetypes/) offers a searchable database of file extensions with information on the applications (both proprietary and open-source) that can be used to open the file format under consideration.
 ------
-<br/>
+<br>
 
 ### <a id="tabular_data">Tabular data</a> 
 - CSV
@@ -26,37 +31,41 @@
 - JSON
 - RDF
 - PARQUET
-<br/>
+<br>
 
 ### <a id="geographic_data">Geographic data</a> 
 - GeoJSON
 - GML
 - GeoTIFF
 - GeoPackage
-<br/>
+<br>
 
 ### <a id="sequencing_data">Sequencing data</a>  
 - FastA
 - FastQ
 - SAM
 - BAM
-<br/>
+- CRAM
+- VCF
+<br>
 
 ### <a id="image_data">Image data</a>  
 - JPEG
 - PNG
 - SVG
-<br/>
+<br>
 
 ### <a id="media_data">Other media data</a> 
-
+- MP3 (previously proprietary)
+- FLAC
+- AV1
+- DICOM
 <br>
 
 ### <a id="biodiversity_data">Biodiversity-specific data</a> 
-
-
+- DwC-A
+- NetCDF
 <br>
-
 
 
 ------

@@ -28,13 +28,12 @@ Technical specification, for instance, an ISO standard like [ISO 19136-1:2020](h
 <br/>
 
 ### <a id="open">Open data format</a>  
-The [Open Knowledge Foundation](https://opendefinition.org/ofd/#:~:text=An%20Open%20Data%20Format%20is,can%20be%20implemented%20by%20others) defines an open data format as "a format with a freely available published specification which places no restrictions, monetary or otherwise, upon its use”. One example of a open data format is JSON, whose specification is freely available on the web. Anyone using this specification can develop software tools for creating, reading, updating and deleting data in JSON format and does not need to pay any licensing fee to implement these tools. Some formats can be considered open because they are royalty-free, but require a one-time fee to access the specification.
+The [Open Knowledge Foundation](https://opendefinition.org/ofd/#:~:text=An%20Open%20Data%20Format%20is,can%20be%20implemented%20by%20others) defines an open data format as "a format with a freely available published specification which places no restrictions, monetary or otherwise, upon its use”. One example of a open data format is JSON, whose specification is freely available on the web. Anyone using this specification can develop software tools for creating, reading, updating, and deleting data in JSON format and does not need to pay any licensing fee to implement these tools. Some formats can be considered open because they are royalty-free, but require a one-time fee to access the specification.
 It is important to stress that the concept of open data format has nothing to do with the concept of machine-readable data format. For instance, PDF is an open data format, but it is not a machine-readable data format. Of course, there are data formats, like JSON, that are both open and machine-readable.
 <br/>
 
 ### <a id="proprietary">Proprietary data format</a> 
 A proprietary data format requires royalty-based software to be used. In a few cases, specifications for proprietary data formats (e.g., Microsoft Office files, ESRI shapefiles) have been made available to promote interoperability.
-<br>
 <br>
 
 
