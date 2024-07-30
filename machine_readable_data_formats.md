@@ -261,7 +261,7 @@ In biodiversity science, not only images, but also other media are routinely use
 
 These media data are distributed in a variety of proprietary and open data formats that differ considerably in relation to file size and quality, and hardware and software compatibility. For instance, popular formats for multimedia files based on ISO standards are MP4 (video) [(ISO/IEC 14496-14:2020(en))](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:14496:-14:ed-3:v1:en) and MP3 (audio) [(ISO/IEC 13818-3:1998(en)](https://www.iso.org/obp/ui/en/#iso:std:iso-iec:13818:-3:ed-2:v1:en). [DICOM](https://www.dicomstandard.org), the reference standard for medical imaging, is often used for volumetric 3D models. &nbsp;
 
-Similarly to images, the other media data discussed in this section are not machine-readable and information can be extracted only by processing. Machine learning models are especially popular to work with these data. For instance, several publications appeared in recent years discussing how YOLO [**[4]**](#4), which is a state-of-the-art model for object detection in videos, can be used for the needs of biodiversity science. Ad hoc models for object/sound detection [(Müller et al., 2023)](#muller) are also implemented, but often with mixed results due to lack of adequate training data. As already noted above, the devices that produce digital media also generate metadata and, at least these metadata, should be made available in a machine-readable format and provide all the information required for the use and re-use of the multimedia data. &nbsp;
+Similarly to images, the other media data discussed in this section are not machine-readable and information can be extracted only by processing them. Machine learning models are especially popular to work with these data. For instance, several publications appeared in recent years discussing how YOLO [**[4]**](#4), which is a state-of-the-art model for object detection in videos, can be used for the needs of biodiversity science. Ad hoc models for object/sound detection [(Müller et al., 2023)](#muller) are also implemented, but often with mixed results due to lack of adequate training data. As already noted above, the devices that produce digital media also generate metadata and, at least these metadata, should be made available in a machine-readable format and provide all the information required for the use and re-use of the multimedia data. &nbsp;
 
 <a id="4">**[4]**</a>  
 YOLO (You Look Only Once) is a very popular family of models for object detection originally presented in [2015](https://arxiv.org/abs/1506.02640). 
@@ -302,27 +302,28 @@ As discussed in the [Glossary](./glossary.md#data-standard), a data standard is 
 <br/>
 
 ### <a id="references">8. References</a>
-<a id="avram">Avram</a>, E.D. (2003) Machine-Readable Cataloging (MARC) Program. In *Encyclopedia of Library and Information Science* 3, pp.1712-1730. DOI: [10.1081/E-ELIS 120008993](https://www.taylorfrancis.com/chapters/edit/10.1081/E-ELIS3-120008993/machine-readable-cataloging-marc-1961–1974-elis-classic-henriette-avram).&nbsp;
+<a id="avram">Avram</a>, E.D. (2003) Machine-Readable Cataloging (MARC) Program. In *Encyclopedia of Library and Information Science* 3, pp. 1712-1730. DOI: [10.1081/E-ELIS 120008993](https://www.taylorfrancis.com/chapters/edit/10.1081/E-ELIS3-120008993/machine-readable-cataloging-marc-1961–1974-elis-classic-henriette-avram).&nbsp;
 
-<a id="blackburn">Blackburn</a>, D.C. et al. (2024) Increasing the impact of vertebrate scientific collections through 3D imaging: The openVertebrate (oVert) Thematic Collections Network, *BioScience* 74(3), 169-186. DOI: [10.1093/biosci/biad120](https://doi.org/10.1093/biosci/biad120).&nbsp;
+<a id="blackburn">Blackburn</a>, D.C. et al. (2024) Increasing the Impact of
+Vertebrate Scientific Collections through 3D Imaging: The openVertebrate (oVert) Thematic Collections Network, *BioScience* 74(3), 169-186. DOI: [10.1093/biosci/biad120](https://doi.org/10.1093/biosci/biad120).&nbsp;
 
 <a id="gonzalez">Gonzalez</a>, R.C. and Woods, R.E. (2018) Digital Image Processing (4th edition). Pearson Education, New York. &nbsp;
 
-<a id="iso">ISO/IEC</a> STANDARD 29500-1: 2016(E) (2016) Information technology - Document description and processing languages: Office Open XML File Formats. Vernier, Geneva, Switzerland: ISO Copyright Office [(available online)](https://standards.iso.org/ittf/PubliclyAvailableStandards/c071691_ISO_IEC_29500-1_2016.zip). &nbsp;
+<a id="iso">ISO/IEC</a> STANDARD 29500-1: 2016(E) (2016) Information Technology - Document Description and Processing Languages: Office Open XML File Formats. Vernier, Geneva, Switzerland: ISO Copyright Office [(available online)](https://standards.iso.org/ittf/PubliclyAvailableStandards/c071691_ISO_IEC_29500-1_2016.zip). &nbsp;
 
-<a id="kvsn">Kvsn</a>, R.R.  et al. (2020) Bioacoustics Data Analysis – A Taxonomy, Survey and Open Challenges, *IEEE Access* 8, 57684-57708. doi: [10.1109/ACCESS.2020.2978547](http://dx.doi.org/10.1109/ACCESS.2020.2978547). &nbsp;
+<a id="kvsn">Kvsn</a>, R.R.  et al. (2020) Bioacoustics Data Analysis – A Taxonomy, Survey and Open Challenges, *IEEE Access* 8, 57684-57708. DOI: [10.1109/ACCESS.2020.2978547](http://dx.doi.org/10.1109/ACCESS.2020.2978547). &nbsp;
 
-<a id="muller">Müller</a>, J. et al. (2023) Soundscapes and deep learning enable tracking biodiversity recovery in tropical forests, *Nature Communications*, 14, 6191. DOI:[10.1038/s41467-023-41693-w](https://doi.org/10.1038/s41467-023-41693-w-pp). &nbsp;
+<a id="muller">Müller</a>, J. et al. (2023) Soundscapes and Deep Learning Enable Tracking Biodiversity Recovery in Tropical Forests, *Nature Communications*, 14, 6191. DOI:[10.1038/s41467-023-41693-w](https://doi.org/10.1038/s41467-023-41693-w-pp). &nbsp;
 
-<a id="sharma">Sharma</a>, G. (2016) Image-based data interfaces revisited: Barcodes and watermarks for the mobile and digital worlds, *8th International Conference on Communication Systems and Networks (COMSNETS)*, Bangalore, India, pp. 1-6. DOI: [10.1109/COMSNETS.2016.74400213](https://ieeexplore.ieee.org/document/7440021). &nbsp;
+<a id="sharma">Sharma</a>, G. (2016) Image-based Data Interfaces Revisited: Barcodes and Watermarks for the Mobile and Digital Worlds, *8th International Conference on Communication Systems and Networks (COMSNETS)*, Bangalore, India, pp. 1-6. DOI: [10.1109/COMSNETS.2016.74400213](https://ieeexplore.ieee.org/document/7440021). &nbsp;
 
-<a id="szeliski">Szeliski</a>, R. (2022) Computer Vision: Algorithms and Applications (2nd edition). springer, Cham. DOI: https://doi.org/10.1007/978-3-030-34372-9 &nbsp;
+<a id="szeliski">Szeliski</a>, R. (2022) Computer Vision: Algorithms and Applications (2nd edition). Springer, Cham. DOI: https://doi.org/10.1007/978-3-030-34372-9 &nbsp;
 
-<a id="theissinger">Theissinger</a>, K. et al. (2023) How genomics can help biodiversity conservation, *Trends in Genetics* 39(7), 545-559. doi: [10.1016/j.tig.2023.01.005](http://dx.doi.org/10.1016/j.tig.2023.01.005). &nbsp;
+<a id="theissinger">Theissinger</a>, K. et al. (2023) How Genomics Can Help Biodiversity Conservation, *Trends in Genetics* 39(7), 545-559. DOI: [10.1016/j.tig.2023.01.005](http://dx.doi.org/10.1016/j.tig.2023.01.005). &nbsp;
 
 <a id="usdataact">OPEN Government Data Act</a> H.R.1770 115th Congress (2017-2018) [(available online)](https://www.congress.gov/115/bills/hr1770/BILLS-115hr1770ih.pdf). &nbsp;
 
-<a id="weinstein">Weinstein</a>, B.G. (2018) Scene-specific convolutional neural networks for video-based biodiversity detection, *Methods in Ecology and Evolution* 9, 1435-1441. DOI:[10.1111/2041-210X.13011](https://doi.org/10.1111/2041-210X.13011).
+<a id="weinstein">Weinstein</a>, B.G. (2018) Scene-specific Convolutional Neural Networks for Video-based Biodiversity Detection, *Methods in Ecology and Evolution* 9, 1435-1441. DOI:[10.1111/2041-210X.13011](https://doi.org/10.1111/2041-210X.13011).
 &nbsp;
 <br/>
 
