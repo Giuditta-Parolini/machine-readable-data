@@ -299,6 +299,8 @@ As discussed in the [Glossary](./glossary.md#data-standard), a data standard is 
 
 
 ### <a id="ai">7. Machine-readable data in the age of AI: Some final remarks</a> 
+The concept of AI-ready data is gaining increasing popularity in business as well as in science. The concept has no established definition and its reach ranges from practical considerations (e.g., data format, accessibility), to ethical considerations (e.g., lack of bias, accuracy). Regardless of how an organisation defines its AI-ready data, data machine-readability is a cornerstone of it. Only digital data that can be managed via automatic pipelines and consumed directly by a machine learning model or a deep neural network can be considered AI-ready. Making available data in a machine-readable format, therefore, is the first step to make them AI-ready.
+Yet, if machine-readable data are easily consumed by an AI algorithm, this poses the question of what AI uses are considered lawful/acceptable for the data and how organisations can avoid a misuse of their data. Only proper data licensing, which also means making the data license machine-readable, can offer a legal and practical protection in this case. All organisations, in and beyond biodiversity science, should devote special thought to license their machine-readable datasets appropriately.
 <br/>
 
 ### <a id="references">8. References</a>
